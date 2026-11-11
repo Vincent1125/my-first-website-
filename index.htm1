@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的第一个网站</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f5f9;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px 20px;
+            border-radius: 20px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 5px 20px #ddd;
+        }
+
+        h1 {
+            color: #405de6;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        button {
+            background: #405de6;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>你好，世界！</h1>
+        <p>这是我的第一个个人网站。</p>
+        <p>欢迎来到我的数字空间！</p>
+        <button onclick="alert('欢迎来到我的网站！')">
+            点击我
+        </button>
+    </div>
+</body>
+</html>
