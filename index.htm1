@@ -1,54 +1,371 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的第一个网站</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f5f9;
-            text-align: center;
-            padding: 80px 20px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vincent | Personal Space</title>
 
-        .card {
-            background: white;
-            padding: 40px 20px;
-            border-radius: 20px;
-            max-width: 500px;
-            margin: auto;
-            box-shadow: 0 5px 20px #ddd;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        h1 {
-            color: #405de6;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        p {
-            color: #666;
-            line-height: 1.8;
-        }
+body {
+    font-family: -apple-system, BlinkMacSystemFont,
+    "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f8f8f6;
+    color: #252525;
+    line-height: 1.8;
+}
 
-        button {
-            background: #405de6;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 10px;
-            font-size: 16px;
-        }
-    </style>
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    border-bottom: 1px solid #eaeaea;
+    background: rgba(248,248,246,0.95);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+    font-size: 14px;
+    color: #666;
+}
+
+nav a:hover {
+    color: #9a795b;
+}
+
+.hero {
+    min-height: 570px;
+    padding: 120px 10% 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #efeee9;
+}
+
+.eyebrow {
+    color: #99836b;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 8vw, 76px);
+    line-height: 1.25;
+    font-weight: 600;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #a58b70;
+}
+
+.hero p {
+    max-width: 520px;
+    color: #777;
+    font-size: 16px;
+}
+
+.hero-links {
+    margin-top: 35px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 11px 25px;
+    border: 1px solid #333;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #333;
+    color: white;
+}
+
+section {
+    padding: 90px 10%;
+}
+
+.section-title {
+    font-size: 30px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.section-subtitle {
+    color: #999;
+    font-size: 13px;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text p {
+    color: #777;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.about-card {
+    background: #eeece6;
+    min-height: 260px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-card h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.about-card p {
+    color: #888;
+    font-size: 14px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border: 1px solid #eeeeec;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.05);
+}
+
+.card-label {
+    font-size: 11px;
+    color: #a58b70;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #888;
+    font-size: 14px;
+}
+
+.notes {
+    background: #efeee9;
+}
+
+.note-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #deddd8;
+}
+
+.note-item span {
+    color: #999;
+    font-size: 13px;
+}
+
+.contact {
+    text-align: center;
+    background: #292b2c;
+    color: white;
+}
+
+.contact p {
+    color: #aaa;
+    margin: 15px 0 30px;
+}
+
+.contact a {
+    color: #d0b89d;
+}
+
+footer {
+    padding: 25px;
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+    background: #292b2c;
+    border-top: 1px solid #444;
+}
+
+@media (max-width: 650px) {
+    header {
+        padding: 0 5%;
+        height: 65px;
+    }
+
+    nav {
+        gap: 12px;
+        font-size: 12px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .hero {
+        min-height: 490px;
+        padding: 90px 7%;
+    }
+
+    section {
+        padding: 65px 7%;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .note-item {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 380px) {
+    nav {
+        gap: 8px;
+        font-size: 11px;
+    }
+}
+</style>
 </head>
 
 <body>
-    <div class="card">
-        <h1>你好，世界！</h1>
-        <p>这是我的第一个个人网站。</p>
-        <p>欢迎来到我的数字空间！</p>
-        <button onclick="alert('欢迎来到我的网站！')">
-            点击我
-        </button>
+
+<header>
+    <div class="logo">VINCENT.</div>
+    <nav>
+        <a href="#home">首页</a>
+        <a href="#about">关于</a>
+        <a href="#blog">博客</a>
+        <a href="#projects">作品</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+    <div class="eyebrow">WELCOME TO MY WORLD</div>
+
+    <h1>
+        Stay curious.<br>
+        <span>Keep exploring.</span>
+    </h1>
+
+    <p>
+        你好，我是 Vincent。<br>
+        一个保持好奇、热爱生活，也在不断探索世界的年轻人。
+        这里记录我的思考、学习、创造与成长。
+    </p>
+
+    <div class="hero-links">
+        <a href="#about" class="btn">认识我 →</a>
+        <a href="#projects" class="btn">探索我的作品</a>
     </div>
-</body>
-</html>
+</section>
+
+<section id="about">
+    <div class="section-title">About Me.</div>
+    <div class="section-subtitle">关于我 · ABOUT</div>
+
+    <div class="about">
+        <div class="about-text">
+            <p>
+                我是一名正在探索计算机世界的大学生，
+                对技术、文学、设计和生活保持着浓厚的兴趣。
+            </p>
+
+            <p>
+                我相信学习不应该只是为了考试，
+                更应该是认识世界、理解世界和创造价值的过程。
+            </p>
+
+            <p>
+                希望在这里留下那些值得记录的瞬间，
+                也希望未来回望时，能够看见自己成长的轨迹。
+            </p>
+        </div>
+
+        <div class="about-card">
+            <h3>关于生活</h3>
+            <p>
+                阅读 · 思考 · 编程 · 旅行 · 摄影<br><br>
+                保持热爱，保持独立思考。<br>
+                慢慢来，但不要停止探索。
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="blog">
+    <div class="section-title">My Journal.</div>
+    <div class="section-subtitle">文字与思考 · JOURNAL</div>
+
+    <div class="grid">
+        <article class="card">
+            <div class="card-label">READING</div>
+            <h3>关于阅读与生活</h3>
+            <p>
+                在文字中寻找共鸣，在阅读中重新认识生活。
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="card-label">THINKING</div>
+            <h3>关于成长与思考</h3>
+            <p>
+                保持好奇，独
